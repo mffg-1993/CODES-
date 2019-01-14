@@ -1,7 +1,10 @@
 function [ H] = NHermite(n,X)
-
-H0=1;
-H1=2.*X; 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%          Hermite Polynomials evaluated at a certain X point
+%          Manuel Ferrer, 2018
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Hn1=ones(size(X));
 H=2.*X; 
@@ -9,9 +12,9 @@ H=2.*X;
 if n<0  
     error('The index must be 0 or positive')
 elseif n==0
-    H=H0;
+    H=Hn1;
 elseif n==1
-    H=H1;
+    H=H;
 else 
     for nn=2:n
         Hn=2.*X.*H-2.*(nn-1).*Hn1; 
